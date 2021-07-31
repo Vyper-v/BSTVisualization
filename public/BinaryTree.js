@@ -1,7 +1,6 @@
-const { timeStamp } = require("console");
-
 class Node {
   constructor(value) {
+    this.visual = document.createElement('div');
     this.value = value;
     this.left = null;
     this.right = null;
@@ -11,6 +10,7 @@ class Node {
 class BST {
   constructor(value) {
     this.root = new Node(value);
+    this.root.visual.id = 0
     this.count = 0;
   }
 
@@ -26,12 +26,14 @@ class BST {
     const searchTree = (node) => {
       if (value < node.value) {
         if (!node.left) {
+          newNode.visual.id = this.count;
           node.left = newNode;
         } else {
           searchTree(node.left);
         }
       } else if (value > node.value) {
         if (!node.right) {
+          newNode.visual.id = this.count + 1;
           node.right = newNode;
         } else {
           searchTree(node.right);
@@ -39,6 +41,7 @@ class BST {
       }
     };
     searchTree(this.root);
+    console.log(newNode)
   }
 
   min() {
@@ -120,12 +123,4 @@ class BST {
     traverse(this.root);
     return result;
   }
-}
-
-const mytree = new BST(50);
-
-let i = 0;
-while (i < 100) {
-  mytree.insert(Math.random() * 100);
-  i++;
 }

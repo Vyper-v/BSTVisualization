@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Vyper-v/BSTVisualization/issues"
   },
-  "homepage": "https://github.com/Vyper-v/BSTVisualization#readme"
+  "homepage": "https://github.com/Vyper-v/BSTVisualization#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
